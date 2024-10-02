@@ -3,24 +3,63 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Guia de Ejercicios JS</title>
   </head>
   <body>
     <main>
-      <!-- Introduccion -->
+
+      <!-- PROPIEDAD LOCATION -->
+      <button id="boton">PAGINA ALEATRIA</button>
+
+      <script>
+        //boton que genere numero aleatorio entre 0 y 2
+        //Si es 0 llamar: www.outlook.com
+        //Si es 1 llamar: www.gmail.com
+        //Si es 2 llamar: www.yahoo.com
+
+        const outlook = 'https://www.outlook.com';
+        const gmail = 'https://www.gmail.com';
+        const yahoo = 'https://www.yahoo.com';
+
+        const boton = document.getElementById("boton");
+
+        boton.addEventListener("click", () => {
+          let n;
+          n = Math.random()*3;
+          n = parseInt(n);
+
+          console.log(n)
+          
+          switch(n){
+            case 0:
+              window.location = outlook;
+              return;
+            case 1: 
+              window.location = gmail;
+              return;
+            case 2: 
+              window.location = yahoo;
+              return;
+            default: return;
+          }
+        })
+
+      </script>
+
+      <!-- Introduccion
       <script>
         document.write("Santiago <br> 21");
       </script>
       <br />
 
-      <!-- Variables -->
+      Variables
       <script>
         let nombre_empleado = "Empleado Santiago";
         let sueldo = 21000;
 
         document.write(nombre_empleado + "<br>" + sueldo);
       </script>
-      <br />
+      <br /> -->
 
       <!-- Entrada de datos por teclado - Promt() -->
       <!-- <script>
@@ -213,7 +252,7 @@
       </script>
       <br> -->
 
-      <!-- Concepto de acumulador. -->
+      <!-- Concepto de acumulador.
       <script>
         let x = 0, notas, contador_7 = 0, contador_menores = 0;
 
@@ -237,8 +276,7 @@
             " con notas menores a 7"
         );
       </script>
-      <br>
-      
+      <br> -->
     </main>
   </body>
 </html>
