@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Guia de Ejercicios JS</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main>
+      <!-- Titulo de Pagina-->
+      <header>
+        <h1>Guia de Ejercicios de JavaScript</h1>
+        <img src="" alt="logo-javascript" />
+        <!-- FALTA SRC -->
+      </header>
+      <!-- Contenido de Actividad-->
+      <section class="contenido-actividad">
+        <!-- Sidebar de Actividades -->
+        <aside class="actividades">
+          <ul></ul>
+            <li><a href="">Introduccion</a></li>
+            <li><a href="">Tipos de datos</a></li>
+            <li><a href="">Estructuras condicionales</a></li>
+            <li><a href="">Operadores logicos</a></li>
+            <li><a href="">Estructuras switch</a></li>
+            <li><a href="">Estructuras repetitivas</a></li>
+            <li><a href="">Funciones</a></li>
+            <li><a href="">POO - Programacion orientada a objetos</a></li>
+            <li><a href="">Clases</a></li>
+            <li><a href="">Formularios y Eventos</a></li>
+            <li><a href="">Controles</a></li>
+            <li><a href="">Propiedades</a></li>
+          </ul>
+        </aside>
+      
+        <!-- Consigna de Actividad -->
+        <div class="consigna-actividad">
+        <!-- Titulo Actividad -->
+          <header class="titulo-actividad">
+            <h2>Actividad...</h2>
+          </header>
+
+          <div class="actividad">
+            <div class="consigna">Consigna de Actividad</div>
+            <div class="codigo">Codigo de JavaScript</div>
+          </div>
+          
+          <button>Ejecutar Codigo</button>
+          <div class="consola">Resultado de codigo</div>
+         
+          
+        </div>
+      </section>
+
+      <!-- PROPIEDAD LOCATION
+      <button id="boton">PAGINA ALEATRIA</button>
+
+      <script>
+        //boton que genere numero aleatorio entre 0 y 2
+        //Si es 0 llamar: www.outlook.com
+        //Si es 1 llamar: www.gmail.com
+        //Si es 2 llamar: www.yahoo.com
+
+        const outlook = 'https://www.outlook.com';
+        const gmail = 'https://www.gmail.com';
+        const yahoo = 'https://www.yahoo.com';
+
+        const boton = document.getElementById("boton");
+
+        boton.addEventListener("click", () => {
+          let n;
+          n = Math.random()*3;
+          n = parseInt(n);
+
+          console.log(n)
+          
+          switch(n){
+            case 0:
+              window.location = outlook;
+              return;
+            case 1: 
+              window.location = gmail;
+              return;
+            case 2: 
+              window.location = yahoo;
+              return;
+            default: return;
+          }
+        })
+
+      </script> -->
+
+      <!-- Introduccion
+      <script>
+        document.write("Santiago <br> 21");
+      </script>
+      <br />
+
+      Variables
+      <script>
+        let nombre_empleado = "Empleado Santiago";
+        let sueldo = 21000;
+
+        document.write(nombre_empleado + "<br>" + sueldo);
+      </script>
+      <br /> -->
+
+      <!-- Entrada de datos por teclado - Promt() -->
+      <!-- <script>
+        let nombre;
+        let edad;
+        nombre = prompt('Ingrese su nombre:');
+        edad = prompt('Ingrese su edad: ');
+        document.write('Hola! '+ nombre + ', wow tienes: ' + edad + 'Años!!');
+       </script> -->
+
+      <!-- Estructuras secuenciales de programación. -->
+      <!-- 1. -->
+      <!-- <script>
+        let lado;
+        lado = parseInt(prompt("Ingrese tamaño del lado de un cuadrado:"));
+        document.write("<br> El perimetro del cuadrado es: ", lado * 4);
+      </script> -->
+      <br />
+      <!-- 2. -->
+      <!-- <script>
+        let numero1, numero2, numero3, numero4;
+        n1 = parseInt(prompt("Ingrese Numero 1:"));
+        numero2 = parseInt(prompt("Ingrese Numero 2:"));
+        numero3 = parseInt(prompt("Ingrese Numero 3:"));
+        numero4 = parseInt(prompt("Ingrese Numero 4:"));
+
+        suma = numero1 + numero2;
+        producto = numero3 * numero4;
+
+        document.write(
+          "La suma de los dos primero:" +
+            suma +
+            "<br>" +
+            "El producto del tercero con el cualto es: " +
+            producto
+        );
+      </script> -->
+      <br />
+      <!-- 3. -->
+      <!-- <script>
+        let x = 1;
+        let suma_valores = 0;
+        let producto_valores = 1;
+        let valor;
+        while (x <= 4) {
+            valor = parseInt(prompt('Ingrese valor:'));
+            suma_valores = suma_valores + valor;
+            producto_valores = producto_valores * valor
+            x = x + 1;
+        }
+        document.write('La suma de los valores es ' + suma_valores + '<br>' + 'La multiplicacion de los valores es:' + producto_valores);
+    </script> -->
+      <br />
+      <!-- 4. -->
+      <!-- <script>
+        let precio, cantidad, total;
+        precio = parseInt(prompt("Ingrese precio:"));
+        cantidad = parseInt(prompt("Ingrese cantidad:"));
+        total = precio * cantidad
+        document.write("Abonar: ", total);
+    </script> -->
+
+      <!-- Estructuras condicionales simples. -->
+      <!-- 1. -->
+      <!-- <script>
+        let nota1, nota2, nota3, promedio;
+        nota1 = parseInt(prompt("Ingrese nota 1:"));
+        nota2 = parseInt(prompt("Ingrese nota 2:"));
+        nota3 = parseInt(prompt("Ingrese nota 3:"));
+
+        suma_notas = nota1 + nota2 + nota3;
+        promedio = suma_notas / 3;
+
+        if (promedio >= 7) {
+          document.write("Promocionado");
+        }
+      </script> 
+      <br />-->
+
+      <!-- 2. -->
+      <!-- <script>
+        let clave1, clave2;
+        clave1 = parseInt(prompt("Ingrese clave 1:"));
+        clave2 = parseInt(prompt("Ingrese clave anterior:"));
+
+        if(clave1 == clave2){
+            document.write('Es correcto')
+        }
+       </script> -->
+
+      <!-- Estructuras condicionales compuestas. -->
+      <!-- 1. -->
+      <!-- <script>
+        let num1, num2;
+        num1 = parseInt(prompt("Ingrese el primer número:"));
+        num2 = parseInt(prompt("Ingrese el segundo número:"));
+        if (num1 > num2) {
+            let sumaN1N2 = num1 + num2;
+            let diferencia = num1 - num2;
+          document.write("Su suma es:  " + sumaN1N2 + 'Su diferencia es: ' + diferencia);
+        } else {
+            let productoN1N2 = num1 * num2;
+            let divisionN1N2 = num1 / num2;
+            document.write("el mayor es " + num2);
+        }
+      </script>
+      <br> -->
+      <!-- 2. -->
+      <!-- 3. -->
+
+      <!-- Estructuras condicionales anidadas.-->
+      <!-- <script>
+        let num;
+
+        num = parseInt(prompt("Ingrese el numero a evaluar: "));
+
+        if (num > 0) {
+          document.write("El número es positivo");
+        } else if (num < 0) {
+          document.write("El número es negativo");
+        } else {
+          document.write("El número es 0");
+        }
+      </script>
+      <br> -->
+
+      <!-- Operadores lógicos && (y) en las estructuras condicionales. -->
+      <!-- <script>
+        let dia = parseInt(prompt('Ingrese el Dia:'))
+        let mes = parseInt(prompt('Ingrese el Mes:'))
+        let año = parseInt(prompt('Ingrese el Año:'))
+
+        if(dia == 25 && mes == 12){
+            document.write('Estamos en Navidad!')
+        }else{
+            document.write('Es: '+ dia +'/'+ mes +'/'+año)
+        }
+       </script>
+       <br> -->
+
+      <!-- Operadores lógicos || (o) en las estructuras condicionales.-->
+      <!-- <script>
+        let valor1 = parseInt(prompt("Ingrese el valor 1:"));
+        let valor2 = parseInt(prompt("Ingrese el valor 2:"));
+        let valor3 = parseInt(prompt("Ingrese el valor 3:"));
+
+        if (valor1 < 10 || valor2 < 10 || valor3 < 10) {
+          document.write("Alguno de los valores es menor a 10");
+        } else {
+          document.write("Todos los valores son mayor a 10");
+        }
+      </script>
+      <br /> -->
+
+      <!-- Estructuras switch.	-->
+      <!-- <script>
+        let palabra;
+        palabra = prompt("Ingrese la palabra: ");
+
+        switch (palabra) {
+          case "casa":
+            document.write("house");
+            break;
+          case "mesa":
+            document.write("table");
+            break;
+          case "perro":
+            document.write("dog");
+            break;
+          case "gato":
+            document.write("cat");
+            break;
+          default:
+            document.write("no ingreso un valor correcto");
+            break;
+        }
+      </script>
+      <br> -->
+
+      <!-- Estructura repetitiva (while) -->
+      <!-- <script>
+        let a = 11;
+
+        x = 1;
+        while (x <= 25) {
+          document.write(a + "-");
+          x = x + 1;
+          a = a + 11;
+        }
+      </script>
+      <br> -->
+
+      <!-- Concepto de acumulador.
+      <script>
+        let x = 0, notas, contador_7 = 0, contador_menores = 0;
+
+        while (x !== 10) {
+          notas = parseInt(prompt("Ingrese nota:"));
+
+          if (notas >= 7) {
+            contador_7++;
+          } else {
+            contador_menores++;
+          }
+
+          x = x + 1;
+        }
+
+        document.write(
+          "Hay: " +
+            contador_7 +
+            " con notas mayores a 7 <br> Hay: " +
+            contador_menores +
+            " con notas menores a 7"
+        );
+      </script>
+      <br> -->
+    </main>
+  </body>
+</html>
