@@ -1,5 +1,7 @@
 //OPERADORES LOGICOS
 const contenedor = document.getElementById("codigo");
+
+
 //Operadores lógicos && (y) en las estructuras condicionales
 let dia = parseInt(prompt('Ingrese el Dia:'))
 let mes = parseInt(prompt('Ingrese el Mes:'))

@@ -1,38 +1,60 @@
 //Estructuras repetivas 
+const consola = document.getElementById("consola");
 
-//WHILE
-//--1--
-let a = 11;
+export function estRepetitivaWhile(){
+    //WHILE
+    //--1--
+    let a = 11;
 
-x = 1;
-while (x <= 25) {
-    document.write(a + "-");
-    x = x + 1;
-    a = a + 11;
-}
-
-//Concepto de acumulador
-let x = 0, notas, contador_7 = 0, contador_menores = 0;
-
-while (x !== 10) {
-    notas = parseInt(prompt("Ingrese nota:"));
-
-    if (notas >= 7) {
-    contador_7++;
-    } else {
-    contador_menores++;
+    x = 1;
+    while (x <= 25) {
+        //document.write(a + "-");
+        consola.innerHTML =  `${a} - `;
+        x = x + 1;
+        a = a + 11;
     }
 
-    x = x + 1;
+    return ` 
+    let a = 11;
+
+    x = 1;
+    while (x <= 25) {
+        document.write(a + "-");
+        x = x + 1;
+        a = a + 11;
+    }
+    `;
 }
 
-document.write(
-    "Hay: " +
-    contador_7 +
-    " con notas mayores a 7 <br> Hay: " +
-    contador_menores +
-    " con notas menores a 7"
-);
+export function conceptoAcumulador(){
+    //Concepto de acumulador
+    let x = 0, notas, contador_7 = 0, contador_menores = 0;
+
+    while (x !== 10) {
+        notas = parseInt(prompt("Ingrese nota:"));
+
+        if (notas >= 7) {
+        contador_7++;
+        } else {
+        contador_menores++;
+        }
+
+        x = x + 1;
+    }
+    /*
+     document.write(
+        "Hay: " +
+        contador_7 +
+        " con notas mayores a 7 <br> Hay: " +
+        contador_menores +
+        " con notas menores a 7"
+    );
+    */
+   consola.innerHTML = 
+}
+
+
+
 
 
 //DO/WHILE
