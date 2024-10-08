@@ -80,7 +80,7 @@ button{
 }
 
 .consola{
-    height: 80px;
+    height: fit-content;
     background-color: #1e1e1e; 
     color: #00ff00; 
     font-family: "Courier New", Courier, monospace;

@@ -1,17 +1,21 @@
 //Eventos onFocus y onBlur
-const contenedor = document.getElementById("codigo");
+const consola = document.getElementById("consola");
+
+export function eventoOnFocus_OnBlur(){
+    
+}
 
 contenedor.innerHTML = `
-    <form>
+   
         Ingrese nombre de usuario:
         <input type="text" id="usuario" onFocus="vaciar(this)"><br> 
         Ingrese contraseña:
         <input type="password" id="clave" onBlur="verificar(this)"><br>
         
         <input type="button" value="confirmar">
-    </form>
+    
 
-    <script>
+   
         function vaciar(control) {
                 control.value = '';
         }
@@ -21,7 +25,7 @@ contenedor.innerHTML = `
                 alert('cantidad de caracteres no valido en la contraseña(deben ser entre 7-20 caracteres)');
             }
         }
-    </script>
+  
 `;
 
 //Evento onMouseOver y onMouseOut
