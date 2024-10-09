@@ -54,7 +54,6 @@ export function POO(){
 }
 
 /*
-contenedor.innerHTML = `
     <script>
         function Suma(valor1, valor2) {
             this.valor1 = valor1;
@@ -77,7 +76,6 @@ contenedor.innerHTML = `
         suma1.segundoValor(30);
         document.write('La suma de 70 y 30 es:' + suma1.retornarResultado() + '<br>');
     </script>
-`;
 */
 
 //Defincion de varias clases
@@ -140,7 +138,6 @@ export function POOvariasClases(){
 };
 
 /*
-contenedor.innerHTML = `
     <script>
         //Clase PERSONA
         function Persona() {
@@ -173,7 +170,6 @@ contenedor.innerHTML = `
             cant++;
         document.write('La cantidad de personas que no pueden entrar por su edad a la empresa son:' + cant);
     </script>
-`;
 */
 
 //Vectores con componentes de tipo objeto
@@ -211,13 +207,12 @@ export function vectoresTipoObjeto(){
         }
     }
 
-    // Devolver el código en formato de texto
     return `
     function Persona(nombre, edad) {
         this.nombre = nombre;
         this.edad = edad;
         this.imprimirNombre = function() {
-            document.write(this.nombre + ' que tiene una edad ' + this.edad + '<br>');
+            document.write(this.nombre + ' que tiene una edad ' + this.edad + '&lt;br&gt;');
         };
     }
 
@@ -233,7 +228,7 @@ export function vectoresTipoObjeto(){
             posmayor = f;
         }
     }
-    // document.write('Personas con mayor edad:<br>');
+    // document.write('Personas con mayor edad: &lt;br&gt;');
     for (let f = 0; f < vector.length; f++) {
         if (vector[f].edad === vector[posmayor].edad) {
             vector[f].imprimirNombre();
@@ -242,7 +237,6 @@ export function vectoresTipoObjeto(){
     `;
 };
 /*
-contenedor.innerHTML = `
     <script>
         function Persona(nombre, edad) {
             this.nombre = nombre;
@@ -270,10 +264,69 @@ contenedor.innerHTML = `
             }
         }
     </script>
-`;
+*/
 
 //Creacion de Objetos literales
-contenedor.innerHTML = `
+export function objetosLiterales(){
+    var jugador1 = {
+        nombre: 'ana',
+        puntos: 0,
+        imprimir: function() {
+            
+            // document.write('Nombre:' + this.nombre + '<br>');
+            consola.innerHTML += 'Nombre: ' + this.nombre + '<br>';
+            
+            // document.write('Puntos:' + this.puntos + '<br>');
+            consola.innerHTML += 'Puntos: ' + this.puntos + '<br>';
+        },
+        aumentarpuntos: function(cant) {
+            this.puntos += cant;
+        },
+        verificarsigano: function() {
+            if (this.puntos > 1000) {
+                
+                // document.write('Gano<br>');
+                consola.innerHTML += 'Gano<br>';
+            }
+        }
+    };
+
+    jugador1.imprimir();
+    jugador1.aumentarpuntos(500);
+    jugador1.verificarsigano();
+    jugador1.aumentarpuntos(501);
+    jugador1.verificarsigano();
+    jugador1.imprimir();
+
+    // Devolver el código en formato de texto
+    return `
+    var jugador1 = {
+        nombre: 'ana',
+        puntos: 0,
+        imprimir: function() {
+            // document.write('Nombre:' + this.nombre + '&lt;br&gt;');
+            // document.write('Puntos:' + this.puntos + '&lt;br&gt;');
+        },
+        aumentarpuntos: function(cant) {
+            this.puntos += cant;
+        },
+        verificarsigano: function() {
+            if (this.puntos > 1000) {
+                // document.write('Gano &lt;br&gt;');
+            }
+        }
+    };
+
+    jugador1.imprimir();
+    jugador1.aumentarpuntos(500);
+    jugador1.verificarsigano();
+    jugador1.aumentarpuntos(501);
+    jugador1.verificarsigano();
+    jugador1.imprimir();
+    `;
+}
+
+/*
     <script>
         var jugador1 = {
         nombre: 'ana',
@@ -300,5 +353,4 @@ contenedor.innerHTML = `
         jugador1.verificarsigano();  
         jugador1.imprimir();
     </script>
-`;
 */

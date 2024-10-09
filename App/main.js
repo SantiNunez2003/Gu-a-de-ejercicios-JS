@@ -1,3 +1,4 @@
+import { controlPassword, FormButtonText, funcionesEventos } from "./controles/controles.js";
 import { estSwitch } from "./estructura-switch/est-switch.js";
 import { estCondicionalAnidadas, estOperadorConsicional } from "./estructuras-condicionales/est-cond-anidadas.js";
 import { estCondicionalCompuesta } from "./estructuras-condicionales/est-cond-compuestas.js";
@@ -10,8 +11,8 @@ import { estructurasSec1, estructurasSec2, estructurasSec3, estructurasSec4 } fr
 import { variables } from "./introduccion/variables.js"
 import { objetoWindow, objetoWindowLocation, objetoWindowNavigator, objetoWindowScreen } from "./obj-window/objeto-window.js";
 import { expresionesRegulares, operadorLogicoO, operadorLogicoY } from "./operadores-logicos/opeadores.js";
-import { POO, POOvariasClases, vectoresTipoObjeto } from "./POO/POO.js";
+import { objetosLiterales, POO, POOvariasClases, vectoresTipoObjeto } from "./POO/POO.js";
 
 const contenedorCodigo = document.getElementById("codigo");
 
-contenedorCodigo.innerHTML = vectoresTipoObjeto();
+contenedorCodigo.innerHTML = controlPassword();

@@ -1,7 +1,69 @@
 //Funciones y Eventos
 //--1--
-const contenedor = document.getElementById("codigo");
+const consola = document.getElementById("consola");
 
+export function funcionesEventos(){
+
+    function presion1() {
+        alert('Se presionó el botón 1');
+    }
+
+    function presion2() {
+        alert('Se presionó el botón 2');
+    }
+
+    function presion3(){
+        alert('Se presionó el botón 3');
+    }
+
+    consola.innerHTML = `
+    <form>
+        <input id="boton1" type="button" onClick="presion1()" value="Boton 1">
+        <input id="boton2" type="button" onClick="presion2()" value="Boton 2">
+        <input id="boton3" type="button" onClick="presion3()" value="Boton 3">
+    </form>`;
+
+    const boton1 = document.getElementById("boton1");
+    const boton2 = document.getElementById("boton2");
+    const boton3 = document.getElementById("boton3");
+
+    boton1.addEventListener("click", () => {
+        presion1() 
+    });
+
+    boton2.addEventListener("click", () => {
+        presion2() 
+    });
+
+    boton3.addEventListener("click", () => {
+        presion3() 
+    });
+
+
+    // Devolver el código en formato de texto
+    return `
+        &lt;form&gt;
+            &lt;input type="button" onClick="presion1()" value="Boton 1"&gt;
+            &lt;input type="button" onClick="presion2()" value="Boton 2"&gt;
+            &lt;input type="button" onClick="presion3()" value="Boton 3"&gt;
+        &lt;/form&gt;
+
+        &lt;script&gt;
+            function presion1() {
+                alert('Se presionó el botón 1');
+            }
+
+            function presion2() {
+                alert('Se presionó el botón 2');
+            }
+
+            function presion3() {
+                alert('Se presionó el botón 3');
+            }
+        &lt;/script&gt;
+    `;
+}
+/*
 contenedor.innerHTML = `
     <form>
         <input type="button" onClick="presion1()" value="Boton 1">
@@ -23,10 +85,45 @@ contenedor.innerHTML = `
         }
     </script>`
 ;
+*/
 
 //FORM, BUTTON y TEXT
+export function FormButtonText(){
+    
+    consola.innerHTML = ` 
+    <form>
+        <p>Ingrese un valor:<input type="text" id="numero"></p>
+        <p><input id="boton" type="button" value="Calcular cubo" onClick="calcularCubo()"></p>
+     </form>
+    `;
+    const boton = document.getElementById("boton")
+    boton.addEventListener("click", () => {
+        let v = document.getElementById('numero').value;
+        v = parseInt(v);
+        let cubo = v * v * v;
+
+        alert(cubo);
+    });
+
+    // Devolver el código en formato de texto
+    return `
+    &lt;form&gt;
+        &lt;p&gt;Ingrese un valor:&lt;input type="text" id="numero"&gt; &lt;/p&gt;
+        &lt;p&gt;&lt;input type="button" value="Calcular cubo" onClick="calcularCubo()"&gt; &lt;/p&gt;
+    &lt;/form&gt;
+
+    &lt;script&gt;
+        function calcularCubo() {
+            let v = document.getElementById('numero').value;
+            v = parseInt(v);
+            let cubo = v * v * v;
+            alert(cubo);
+        }
+    &lt;/script&gt;
+    `;
+}
+/*
 //--1--
-contenedor.innerHTML = `
     <form>
         <p>Ingrese un valor:<input type="text" id="numero"></p>
         <p><input type="button" value="Calcular cubo" onClick="calcularCubo()"></p>
@@ -39,10 +136,67 @@ contenedor.innerHTML = `
             let cubo = v * v * v;
             alert(cubo);
         }
-    </script>`;
+    </script>
+*/
 
 //Control PASSWORD
-contenedor.innerHTML = ` 
+export function controlPassword(){
+
+    consola.innerHTML = ` 
+    <form>
+        Ingrese clave:
+        <input type="password" id="clave1">
+        <br> 
+        Repita la clave:
+        <input type="password" id="clave2">
+        <br>
+        <input id="boton" type="button" onClick="verificar()"> verificar
+    </form>
+    `;
+    
+    function verificar() {
+        let clave1 = document.getElementById('clave1').value;
+        let clave2 = document.getElementById('clave2').value;
+
+        if (clave1 === clave2) {
+        alert('Las dos claves ingresadas son iguales');
+        } else {
+        alert('Las dos claves ingresadas son distintas');
+        }
+    }
+    
+    const boton = document.getElementById("boton")
+    boton.addEventListener("click", () => {
+        verificar();
+    });
+
+    
+    // Devolver el código en formato de texto
+    return `
+    &lt;form&gt;
+        Ingrese clave:
+        &lt;input type="password" id="clave1"&gt;
+        &lt;br&gt;
+        &lt;input type="password" id="clave2"&gt;
+        &lt;br&gt;
+        &lt;input type="button" onClick="verificar()"&gt;
+    &lt;/form&gt;
+
+    &lt;script&gt;
+        function verificar() {
+            let clave1 = document.getElementById('clave1').value;
+            let clave2 = document.getElementById('clave2').value;
+            if (clave1 == clave2) {
+                alert('Las dos claves ingresadas son iguales');
+            } else {
+                alert('Las dos claves ingresadas son distintas');
+            }
+        }
+    &lt;/script&gt;
+    `;
+}
+/*
+ 
     <form>
         Ingrese clave:
         <input type="password" id="clave1">
@@ -62,9 +216,35 @@ contenedor.innerHTML = `
                 alert('Las dos claves ingresadas son distintas');
             }
         }
-    </script>`;
+    </script>
+*/
 
 //Control SELECT
+export function controlSelect(){
+    function mostrarSeleccionPizza() {
+        document.getElementById('mensaje').value =
+        document.getElementById('pizza').options[document.getElementById('pizza').selectedIndex].value;
+    }
+
+    return `
+    &lt;form&gt;
+        &lt;p&gt;Pizzas:&lt;/p&gt;
+        &lt;p&gt;&lt;select id="pizza" onChange="mostrarSeleccionPizza()"&gt;
+            &lt;option value="180"&gt;Jamon y Queso &lt;/option&gt;
+            &lt;option value="150"&gt;Muzzarella &lt;/option&gt;
+            &lt;option value="170"&gt;Morrones &lt;/option&gt;
+            &lt;/select&gt; &lt;/p&gt;
+        &lt;p&gt;Pizzas:&lt;/p&gt;
+    &lt;/form&gt;
+
+    &lt;script&gt;
+        function mostrarSeleccionPizza() {
+            document.getElementById('mensaje').value =
+                document.getElementById('pizza').options[document.getElementById('pizza').selectedIndex].value;
+        }
+    &lt;/script&gt;
+    `;
+}
 contenedor.innerHTML = `
     <form>
         <p>Pizzas:</p>
@@ -152,3 +332,4 @@ contenedor.innerHTML = `
         }
     </script>
 `;
+*/
