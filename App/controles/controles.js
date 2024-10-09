@@ -245,6 +245,7 @@ export function controlSelect(){
     &lt;/script&gt;
     `;
 }
+/*
 contenedor.innerHTML = `
     <form>
         <p>Pizzas:</p>
